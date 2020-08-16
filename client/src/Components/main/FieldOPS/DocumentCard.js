@@ -5,6 +5,7 @@ import {UPLOAD_DOCUMENT,VIEW_DOCUMENT} from '../../../module/CRUD';
 import { Page } from "react-pdf";
 import { Document } from "react-pdf/dist/entry.webpack";
 
+
 //This compponent handles the loading ,uploading and displaying of PDF documents
 class DocumentCard extends Component {
   //setting state of components
@@ -21,6 +22,7 @@ class DocumentCard extends Component {
       isLoading: false,
     };
   }
+  
   //Function for getting a  document from database
   loadDoc = async (docType) => {
     const { selectedFieldOPS } = this.props;
@@ -121,7 +123,7 @@ class DocumentCard extends Component {
 
   render() {
     const { card_name } = this.props;
-    const { uploadPercentage, isLoading } = this.state;
+    const { uploadPercentage, isLoading,documents} = this.state;
 
     const checkDocument = () => {
       const { documents, filename } = this.state;
@@ -173,7 +175,16 @@ class DocumentCard extends Component {
         }
       }
     };
-
+    const downloadPDF =(pdf)=> {
+      const linkSource = `data:application/pdf;base64,${pdf}`;
+      const downloadLink = document.createElement("a");
+      const fileName = `${checkDocument()}`;
+  
+      downloadLink.href = linkSource;
+      downloadLink.download = fileName;
+      downloadLink.click();
+  }
+    
     return (
       <Card>
         <Card.Header>
@@ -191,16 +202,18 @@ class DocumentCard extends Component {
                 variant="secondary"
                 id={card_name}
                 onClick={() => this.loadDoc(card_name)}
+                style={{marginRight:'15px'}}
               >
-                Load Document{" "}
+                Load Document
               </Button>
               <div className="input-group-prepend">
                 <Button
                   variant="primary"
                   id={card_name}
                   onClick={this.onFormSubmit}
+                  style={{marginRight:'15px'}}
                 >
-                  Upload{" "}
+                  Upload
                 </Button>
               </div>
               <div className="custom-file">
@@ -213,9 +226,22 @@ class DocumentCard extends Component {
                 />
 
                 <label className="custom-file-label" htmlFor={card_name}>
-                  {checkDocument()}{" "}
+                  {checkDocument()}
                 </label>
+
               </div>
+              {documents.length === 0?
+                null:
+                <Button 
+                  variant='primary'  
+                  style={{marginLeft:'15px'}} 
+                  onClick={()=>downloadPDF(documents.file.file)}
+                 
+                >
+                Download File
+                </Button>
+              }
+             
             </div>
 
             <div style={{ height: "30px" }}>
