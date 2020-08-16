@@ -1,39 +1,184 @@
-import axios from "axios";
-const chai = require("chai");
+const axios = require('axios')
 const CRUD = require("../module/CRUD");
-const Helper = require("../module/Helper");
-//const chai = require('chai');
-jest.mock("axios");
-global.window = {};
 
-describe("Testing CRUD", function () {
-  it("should send user data to be deleted", async ()=> {
-    const message = { message: "Account Deleted" };
-    const resp = { message: "Account Deleted" };
 
-    axios.get.mockImplementationOnce(() => Promise.resolve(resp));
-    await expect(CRUD.DELETE_ACCOUNT()).resolves.toEqual(message);
-    //return CRUD.DELETE_ACCOUNT().then((data) => expect(data).toEqual(message));
+
+afterEach(() => {
+  jest.clearAllMocks();
+}); 
+jest.mock("axios")
+
+describe('Testing axios CRUD functions', function() {
+  it("Should make API request for getting user accounts", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+    // Act
+    const result = await CRUD.GET_USER_ACCOUNTS();
+
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response);
+    
+  });
+ 
+  it("Should make API request for deleting field ops", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+    // Act
+    const result = await CRUD.DELETE_FIELD_OPS();
+
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
   });
 
-  it("Should get the document", async () =>{
-    const FieldOps='ROC';
-    const docType='application/pdf'
-    const message = { data: "data" };
-    const resp = { data: "data" };
-    axios.get.mockImplementationOnce(() => Promise.resolve(resp));
-    await expect(CRUD.DELETE_ACCOUNT(FieldOps,docType)).resolves.toEqual(resp);
-    //return CRUD.DELETE_ACCOUNT(FieldOps,docType).then((data) => expect(data).toEqual(message));
+
+  
+  it("Should make API request for deleting account", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.delete.mockReturnValue(new Promise(r => r(response)));
+    // Act
+    const result = await CRUD.DELETE_ACCOUNT();
+
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toEqual(response); 
+    
   });
 
-  //   it('Should return correct path', function() {
-  //         let key = 'token';
-  //         let value = '1234';
-  //         let expected = '1234';
-  //         Helper.setCookie(key,value);
-  //         const actual =cookies.get(key);
-  //         expect(actual).to.equal(expected);
-  //     });
+  it("Should make API request for view documents", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.VIEW_DOCUMENT("Test","Test");
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+
+  it("Should make API request for admin update account", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.ADMIN_UPDATE_ACCOUNT("Test","Test","Test","Test","Test");
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+
+  it("Should make API request for delete event", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.DELETE_EVENT();
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+
+  it("Should make API request for update file ops", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.UPDATE_FIELD_OPS([]);
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+
+  it("Should make API request for get events", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.GET_EVENTS();
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+
+  it("Should make API request for get events", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.LATEST_USER_DATA();
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+  it("Should make API request for update events", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.UPDATE_EVENT(
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test"
+    );
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
+
+  it("Should make API request for creat events", async () => {
+    // Arrange
+    const response = { message: "Test Passed" };
+    axios.mockReturnValue(new Promise(r => r(response)));
+     // Act
+    const result = await CRUD.CREATE_EVENT(
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test",
+      "Test"
+    );
+      
+    // Assert
+    expect(axios).toHaveBeenCalledTimes(1);
+    expect(result).toBe(response); 
+    
+  });
 });
+
+
+
+ 
 
 

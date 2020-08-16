@@ -246,7 +246,9 @@ const UPLOAD_DOCUMENT = async (
  * @param {*} res return response
  */
 const VIEW_DOCUMENT = async (selectedFieldOPS, docType) => {
-  return await axios.get("api/documents/view", {
+  return await axios({
+    method:'GET',
+    url:"api/documents/view",
     headers: {
       Authorization: `Bearer ${getCookie("token")}`,
     },

@@ -92,6 +92,7 @@ You can run them seperately by following these steps:
     npm start
 ```
 
+To run test navigate to the client directory and type npm test in the terminal 
 (Please note that you should have two terminals open if you are running them seperately)
 
 ### Prerequisite
