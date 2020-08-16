@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SnapShot testing for Landing <Landing /> 1`] = `
+<div
+  className="my-modal-Account-bg"
+>
+  <div
+    className="my-modal-Account"
+  >
+    <div
+      className="flex container"
+      style={
+        Object {
+          "height": "100%",
+          "padding": "15px",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="justify-content-center row"
+      >
+        <div
+          className="col order-6"
+        >
+          <h1>
+            Account Details
+          </h1>
+        </div>
+        <div
+          className="col-md-auto col order-12"
+        >
+          <button
+            className="closeAccount btn btn-danger"
+            disabled={false}
+            type="button"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+      <div
+        className="justify-content-left row"
+      >
+        <div
+          className="text-right col-md-3"
+        >
+          <h3>
+            Username:
+          </h3>
+        </div>
+        <div
+          className="col-md-auto"
+          lassName="text-left"
+        >
+          <h3
+            style={
+              Object {
+                "color": "grey",
+              }
+            }
+          >
+            Liam
+          </h3>
+        </div>
+      </div>
+      <div
+        className="justify-content-left row"
+      >
+        <div
+          className="text-right col-md-3"
+        >
+          <h3>
+            Email:
+          </h3>
+        </div>
+        <div
+          className="col-md-auto"
+          lassName="text-left"
+        >
+          <h3
+            style={
+              Object {
+                "color": "grey",
+              }
+            }
+          >
+            liamkeatonhendricks@gmail.com
+          </h3>
+        </div>
+      </div>
+      <div
+        className="justify-content-center row"
+      >
+        <button
+          className="closeAccount btn btn-danger"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          DELETE ACCOUNT
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

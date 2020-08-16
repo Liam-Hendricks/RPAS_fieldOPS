@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+nav{
+ background-color: transparent;
+ display: flex;
+
+}
+
+
+.background{
+  background-image:url('./static/images/wallpaperflare.com_wallpaper2.jpg');
+  background-size: auto;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  display:flex;
+  padding:0;
+  margin:0;
+  height:100vh;
+}
+.login{
+  margin-top: auto;
+  margin-bottom: auto;
+
+}

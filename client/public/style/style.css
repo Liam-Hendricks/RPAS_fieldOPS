@@ -1,0 +1,451 @@
+.input-field.col>label{
+  color: white;
+}
+
+#name,#email,#password,#password2 {
+  color: white;
+}
+
+.inputLabel {
+  color: white;
+}
+
+.btn-flat.waves-effect {
+  color: white;
+}
+.justify-content-center.row>.col-md-auto>.col{
+  color: white;
+}
+
+
+.main{
+  margin:0;
+  padding:0;
+  display: grid;
+  grid-template-rows:  10vh  15vh 105vh;
+  justify-items: stretch;
+
+  background-image:url('../images/jared-brashier-duNHkmSkW6M-unsplash.jpg');
+  width: 100%;
+
+  background-size: cover;
+  background-position: top;
+  
+  background-repeat: repeat-y;
+  position: relative;
+  
+ 
+}
+.top{
+
+  display:grid;
+  grid-template-columns:1fr 1fr 4fr 1fr 1fr;
+ 
+  align-items: center;
+  
+  
+}
+
+.belowTop{
+  display:flex;
+  justify-content:center ;
+
+}
+
+.tpbtn{
+  position: relative;
+  margin: 72px auto 50px;
+  width:fit-content;
+  background: #ffffff;
+  border: solid cornflowerblue 2px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #3e7ca0;
+  display: grid;
+  place-content: center;
+  transition: all .2s;
+  
+}
+.marginsBelowTop{
+  
+  margin-right: 50px;
+  margin-left: 50px;
+}
+.tpbtn:hover {
+
+  background: #669ebe;
+  color: #ffffff;
+  border: solid #ffffff 2px;
+  box-shadow: 0 0 0 10px #89eefb80;
+  transition: all 0.2s; 
+}
+.top>h1{
+  color: white;
+}
+.top>h2>a{
+  color:white;
+  height: 100px;
+  font-family: 'Dosis';
+  grid-column: 3;
+}
+.weather.card{
+  border-radius: 5px;
+  border: solid cornflowerblue 2px;
+  
+}
+.weatherData{
+  display: grid;
+  align-items: top;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mid{
+  
+ 
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  
+
+}
+.welcomeMessage{
+  color: white;
+  font-family: 'Dosis';
+  grid-column: 3;
+}
+
+
+.EventCards{
+  display: grid;
+  height:fit-content;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.Event.card{
+ margin-left: auto;
+ margin-right: auto;
+
+ background: linear-gradient(#def5fa, #a9c9cf );
+}
+.Event.card:hover{
+   
+  box-shadow: 0 0 0 10px #10bd0089;
+  transition: all 0.2s; 
+}
+.weather-details{
+  font-family: 'Dosis';
+  margin-bottom: 0;
+  width: fit-content;
+}
+.list-group-item{
+  padding: 0;
+}
+
+.fa.fa-refresh:hover {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  transform: rotateY(180deg);
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+
+
+/*# sourceMappingURL=style.css.map */
+
+
+/* MODAL STYLES
+-------------------------------*/
+
+.my-modal-fieldOPS-bg,.my-modal-bg,.my-modal-deleteOPS-bg,.my-modal-createEvent-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  visibility: visible;
+  opacity: 1;
+  transition:  visibility 0s, opacity 0.5s;
+}
+.my-modal-checklist-bg,.my-modal-Account-bg{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1040;
+  transition:  visibility 0s, opacity 0.5s;
+}
+
+.my-modal-Admin{
+  background-color: white;
+  width: 30%;
+  height: 80vh;
+  overflow-y: auto;
+  border-radius: 5px;
+  position: relative;
+}
+
+.my-modal-Account{
+  background-color: white;
+  width: 45%;
+  height: 40vh;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+.closeModalAdmin{
+  position: relative;
+  top: 0;
+  right: 15px;
+}
+.my-bg-active{
+  visibility: visible;
+  opacity: 1;
+}
+.my-bg-active-fieldOPS{
+  visibility: visible;
+  opacity: 1;
+}
+.my-modal{
+  background-color: white;
+  width: 'fit-content';
+  border-radius: 5px;
+  padding: 15px;
+  height:'fit-content';
+ 
+}
+.my-modal-deleteOPS{
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  width: fit-content;
+  height: 100px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "message"
+  "buttons";
+ 
+}
+.confirm_message{
+  grid-area: "message";
+}
+.confirmButtons{
+  grid-area: "buttons";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-area:"confirm back";
+}
+.confirm_delete_button{
+  grid-area: "confirm";
+}
+.cancel_delete_button{
+  grid-area: "back";
+}
+
+.react-pdf__Page__canvas{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-modal-fieldOPS,.my-modal-createEvent{
+  background-color: white;
+  width: 80%;
+  height: 90vh;
+  
+  
+  overflow-y: auto;
+  border-radius: 5px;
+
+ 
+}
+
+.my-modal-checklist{
+  background-color: white;
+  width: 30%;
+  height: 60vh;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+.accordion{
+  width: 100%;
+}
+.accordion>.card{
+  margin: 0;
+}
+/*------File upload-------*/
+
+.FieldOPS_dropdown_area{
+  position: relative;
+}
+.FieldOPS_dropdown_area>.closeModal{
+  position:absolute ;
+  top:10px;
+  right:10px;
+  
+}
+.input-group{
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.FieldOPS_dropdown_area>.dropdown{
+  position:absolute ;
+  top:10px;
+  left:10px;
+}
+#Delete-Field-Ops{
+  top:10px;
+  left:260px;
+  position:absolute ;
+}
+#AccountButton{
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  
+  font-family: 'Dosis';
+}
+#AccountButton:hover{
+  text-decoration: underline;
+ 
+}
+input[type=text]:not(.browser-default){
+  border-bottom: none;
+}
+
+
+.nvbtn{
+  margin: 72px auto 50px;
+  width: fit-content;
+  background: #ffffff;
+  border: solid  black 2px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: black;
+  display: grid;
+  place-content: center;
+  transition: all .2s;
+  grid-column: 1;
+  
+}
+.nvbtn:hover {
+  padding-right: +2%;
+  background: black;
+  color: #ffffff;
+  border: solid #ffffff 2px;
+  box-shadow: 0 0 0 10px #1f1f1f89;
+  transition: all 0.2s; 
+}
+
+
+.adminbtn{
+  margin: 72px auto 50px;
+  width: fit-content;
+  background: #ffffff;
+  border: solid  black 2px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: black;
+  display: grid;
+  place-content: center;
+  transition: all .2s;
+  
+}
+.adminbtn:hover {
+  padding-right: +2%;
+  background: black;
+  color: #ffffff;
+  border: solid #ffffff 2px;
+  box-shadow: 0 0 0 10px #1f1f1f89;
+  transition: all 0.2s; 
+}
+
+.signoutbtn{
+  grid-template-columns: 3fr 1fr;
+  margin: 72px auto 50px;
+  width: fit-content;
+  background: #ffffff;
+  border: solid red 2px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: red;
+  display: grid;
+  place-content: center;
+  transition: all .2s;
+  
+}
+.signoutbtn:hover {
+  padding-right: +2%;
+  background: red;
+  color: #ffffff;
+  border: solid white 2px;
+  box-shadow: 0 0 0 10px #f500009e;
+  transition: all 0.2s; 
+}
+
+.redtbtn{
+  position: absolute;
+  top:5px;
+  right:15px;
+  margin: 72px auto 50px;
+  top:0;
+  background: #ffffff;
+  border: solid red 2px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: red;
+  display: grid;
+  place-content: center;
+  transition: all .2s;
+  
+}
+
+.redtbtn:hover {
+  padding-right: +2%;
+  background: red;
+  color: #ffffff;
+  border: solid white 2px;
+  box-shadow: 0 0 0 10px #f500009e;
+  transition: all 0.2s; 
+}
+
+
+
+
