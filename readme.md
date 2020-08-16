@@ -283,19 +283,15 @@ In the response, you should get a token. Copy that token, we will use it for the
 
 ##### GET http://localhost:8080/api/admin/accounts
 ##### Content-Type: application/json
+No data besides the header token needs to be sent
 
-
-```
-{
- 
-}
-```
 
 you should get an array of user accounts
 
 >3: Admin Update User account:
 ##### PUT http://localhost:8080/api/admin/update
 ##### Content-Type: application/json
+```
 {
   
   "name" :"Username",
@@ -304,12 +300,13 @@ you should get an array of user accounts
   "id":"database id of the user", 
   "role":"user"
 }
-
+```
 response should be a message saying the user has been updated
 
 >4: Admin Update User account:
 ##### PUT http://localhost:8080/api/admin/update
 ##### Content-Type: application/json
+```
 {
   
   "name" :"Username",
@@ -318,34 +315,136 @@ response should be a message saying the user has been updated
   "id":"database id of the user", 
   "role":"user"
 }
-
+```
 
 >5: updateFieldOps
 ##### PUT http://localhost:8080/api//user/update_fieldOPS
 ##### Content-Type: application/json
+```
 {
-  
+    "FieldOPs":["Test","Test2"]
   
 }
+```
 >6: Latest user data
 ##### PUT http://localhost:8080/api/user/latest_data
 ##### Content-Type: application/json
-{
-  
-  
-}
->7: Latest user data
-##### PUT http://localhost:8080/api/user/latest_data
+
+No data besides the header token needs to be sent
+
+>8: Location
+##### GET http://localhost:8080/api/user/latest_data
 ##### Content-Type: application/json
+```
 {
   
-  
+  "url":`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?${location String}` 
 }
+```
+>9: Delete Account
+##### DELETE http://localhost:8080/api/user/deleteAccount
+##### Content-Type: application/json
+
+No data besides the header token needs to be sent
+
+>10: Create Event Card
+##### POST http://localhost:8080/api/events/create
+##### Content-Type: application/json
+```
+{   
+        "name":"file.pdf"
+        "DateTime":"ISO UTC date time stamp"
+        "Location": String
+        "Location" : String,
+        "FieldOpsSelected" : [],
+        "ShortDescription" : String,
+        "Description"  : String,
+        "Checklist"  : [{"name":"Checklist1","item":[{"value":"test",name:"item"},{"value":"test",name:"item"}],
+        "Police" : String,
+        "FireStation" : String,
+        "Hospital" :String,
+}
+```
 
 
-
-
+>11: Update Event Card
+##### PUT http://localhost:8080/api/events/update
+##### Content-Type: application/json
+```
+{       "id":"Event Card _id from mongo"
+        "name":"file.pdf"
+        "DateTime":"ISO UTC date time stamp"
+        "Location": String
+        "Location" : String,
+        "FieldOpsSelected" : [],
+        "ShortDescription" : String,
+        "Description"  : String,
+        "Checklist"  : [{"name":"Checklist1","item":[{"value":"test",name:"item"},{"value":"test",name:"item"}],
+        "Police" : String,
+        "FireStation" : String,
+        "Hospital" :String,
+}
+```
  
 
+>12: Update Event Card
+##### GET http://localhost:8080/api/events/view
+##### Content-Type: application/json
+
+No data besides the header token needs to be sent
+
+>13: Delete Event Card
+##### DELETE http://localhost:8080/api/events/delete
+##### Content-Type: application/json
+```
+{
+  "id":"_id of event card in mongodb"
+
+}
+```
+
+>14: View File
+##### GET http://localhost:8080/api/documents/view
+##### Content-Type: application/json
+```
+{
+  "FieldOps":"Test"
+  "docType":"ROC"
+}
+```
+
+>14: Upload File
+##### POST http://localhost:8080/api/documents/upload
+##### Content-Type: application/json
+```
+{
+    "user": "user id",
+    "name": "Test.pdf",
+    "file":"base64 file string",
+    "fileType": "application/pdf",
+    "FieldOps":"Test",
+    "docType":"ROC"},
+}
+```
 
 
+>15: Delete File
+##### DELETE http://localhost:8080/api/documents/delete
+##### Content-Type: application/json
+```
+{
+    "name": "Test.pdf",
+}
+```
+
+>15: Update File
+##### PUT http://localhost:8080/api/documents/update
+##### Content-Type: application/json
+```
+{
+    "user": "user _id",
+    "name": "Test2.pdf",
+    "file":"base64 file string",
+    "fileType": "application/pdf",
+}
+```
