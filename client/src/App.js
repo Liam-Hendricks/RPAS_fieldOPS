@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import Main from './Components/main/main';
 import Landing from "./Components/landing/Landing";
 import Register from "./Components/Auth/Register";
@@ -7,11 +7,16 @@ import PrivateRoute from './Components/Auth/PrivateRoute';
 import {BrowserRouter ,Route,Switch} from 'react-router-dom';
 import './App.css';
 import { ToastContainer } from "react-toastify";
+import ReactGa from 'react-ga';
 //App component containing the routes for each page
-class App extends Component {
+function App () {
     
+  useEffect(()=>{
+    ReactGa.initialize('UA-175547566-1')
+    //to report page view
+    ReactGa.pageview('/')
+  },[])
   
-  render(){
     
     return (
       <BrowserRouter>
@@ -37,7 +42,7 @@ class App extends Component {
       </div>
       </BrowserRouter>
     );
-  }
+  
  
 }
 
