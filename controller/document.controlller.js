@@ -84,7 +84,7 @@ const uploadFile = (req, res) => {
           docType:data.docType},
           function (err) {
             if(err){
-              return  res.status(501).send({message:`couldn not update document`});
+              return  res.status(501).send({message:`Document is the same`});
             }else{
               res.send({message:"File updated"});
             }
