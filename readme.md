@@ -1,5 +1,5 @@
 ## Project Idea
-My project Idea is to create a web application that allows a user to setup all the nessary documention needed to conduct a drone operation.In a drone operation,the drone operator is required to have a field Operations manual.This manual must contain the following.
+My project Idea is to create a web application that allows the user to setup all the necessary documents needed to conduct a drone operation.In a drone operation,the drone operator is required to have a field Operations manual.This manual must contain the following.
 
 - Copy of  RPA Pilot Licence
 - Copy of the ROC and Opertations Specification
@@ -67,7 +67,7 @@ During a operation the web application will allow the user to go through a prefl
 
 #  RPAS Flight Planning
 
-MERN app that allows user to manage events and documentation related to commerial drone operation or for private individuals.
+MERN app that allows the user to manage events and documentation related to commerial drone operation or for private individuals.
 
 The app was deployed on heroku and is linked to my github for automatic builds
 ##### Live verion https://rpasflighplanner.herokuapp.com/
@@ -260,7 +260,7 @@ You would first need to register as a user
 
 After registering, you can now succesfully login.
 
-In the response, you should get a token. Copy that token, we will use it for the next step!
+In the response, you should receive a token. Copy the token, we will use it for the next step!
 
 ##### POST http://localhost:8080/api/signin
 ##### Content-Type: application/json
@@ -273,18 +273,18 @@ In the response, you should get a token. Copy that token, we will use it for the
 ```
 
 
-After copying the token gotten from the previous step. In postman, go to the authorization tab, under "Type", select "Bearer Token".
-You should then see a input field on the right section where it ask you to paste a token. Paste the copied token here.
+After copying the token received from the previous step. In postman, go to the authorization tab, under "Type", select "Bearer Token".
+You should then see a input field on the right hand section where it ask you to paste a token. Paste the copied token here.
 
 >2: Admin View User Amounts:
 
 After registering, you can now succesfully login.
 
-In the response, you should get a token. Copy that token, we will use it for the next step!
 
 ##### GET http://localhost:8080/api/admin/accounts
 ##### Content-Type: application/json
-No data besides the header token needs to be sent
+No data besides the header token needs to be sent.
+Make sure that your account has the admin role else the token from the pervious step will not work.
 
 
 you should get an array of user accounts
