@@ -24,7 +24,7 @@ During a operation the web application will allow the user to go through a prefl
 * Function to allow user to signup.
 * Function to create and store new users.
 * Function to view all operations created by a user.
-* Function to Edit a operation.
+* Function to edit an operation.
 * Function to view details of a opertation.
 * Function to delete a operation.
 * Function to upload copies of the following documentation(pdf format only):
