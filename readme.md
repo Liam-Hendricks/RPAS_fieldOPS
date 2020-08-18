@@ -150,14 +150,14 @@ http://localhost:3000
 1.Register
 ```
 On the home page click on the register button.This will direct to you a register page.Once on the register page enter your details and hit submit.
-When a notification will popup and tell you where to go.
+A notification will popup and tell you where to go.
 
 
 ```
 1.Login
 ```
 
-Click on Login from the home page.This will take you to the login section.You an either sign in with your details you used to create and account or sign in with facebook
+Click on Login from the home page.This will take you to the login section.You can either signin with your details you used to create an account or signin with facebook.
 
 ```
 Dashboard
@@ -173,42 +173,43 @@ Once you are signed in ,You will be on the home page. Here you can do the follow
 ```
 Manage Field OPS
 ```
-A FieldOPS is all the documentation a user may need when planning a flight,once you click on manage field ops from main and it is open you can do the following:
+A FieldOPS is all the documents  a user may need when planning a flight,once you click on manage FieldOPs from main and it is open, you can do the following:
 * Select a fields ops to edit
 * Delete a selected field OPS
 * Update and preview a pdf in a Document catergory
 * Load and view stored pdfs in a selected Document category 
 * Upload a pdf from a selected Document catergory
+* Download a loaded document from a selected document catergory
 
 ```
 Create Event
 ```
-Allows a user to create a event card that is displayed on the main dashboard.The following details are captured in order to create an event card
-* Location of the flight
-* Search the weather at the flight location
-* Select a Field OPs to use for the flight
-* Enter a short description of the type of flight 
-* Enter a  description of the type of flight 
-* Select a data and time of the flight
-* Enter verious emergency numbers 
-* Create a Total of 3 checklist 
+Allows a user to create an event card that is displayed on the main dashboard.The following details are captured in order to create an event card
+* Location of the flight.
+* Search the weather at the flight location.
+* Select a Field OPs to use for the flight.
+* Enter a short description of the type of flight. 
+* Enter a  description of the type of flight. 
+* Select a data and time of the flight.
+* Enter verious emergency numbers. 
+* Create a Total of 3 checklist. 
 
 ```
 Create Field OPs 
 ```
-Allows user to create a Field OPS with a name of their choosing
+Allows user to create a Field OPS with a name of their choosing.
 
 ```
 Account
 ```
-A user can view there current username and email address and delete their account.
+A user can view their current username and email address and allows them to delete their account.
 When user deletes their account all details linked to them eg. profile,event cards and uploaded documents are deleted from the database.
 
 ```
 Admin
 ```
 In order to access the admin features you must have registered and logged in with an account.
-Once this is complete you must change the role status of the account you want to have access to Admin.
+Once this is complete you must change the role status of the user document in the database of which you want to have access to admin features.
 Simpily open mongodb compass ,connect to your database, view user collections,find the user document of the account you want to change and change role from `user` to `admin`.
 Once this is complete login in again.You should see a admin button on the far left.
 
