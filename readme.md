@@ -44,7 +44,7 @@ During a operation the web application will allow the user to go through a prefl
 * Function to delete selected uploaded documentation.
 * Function to limit amount of files a user may upload.
 * Funciton to limit the size of file a user may upload.
-* Function to generate a weather report base on location.
+* Function to generate a weather report based on location.
 * Function to gather emgergency numbers of closest firestation,police station and hospital.
 * Function to gather all data related to user from database.
 * Function to create a checklist.
@@ -55,12 +55,12 @@ During a operation the web application will allow the user to go through a prefl
 
 # Non functional Requirements
 * Express server must recover from crash.
-* Web application must be responive .
+* Web application must be responsive .
 * UI must be simple and intuitive .
-* UI must be conistant. 
+* UI must be consistant. 
 * User must know at all times where they are on the site.
 * Application will be hosted on heroku.
-* Applicaiton will be build using the MERN stack with additional libriaries.
+* Applicaiton will be built using the MERN stack with additional libriaries.
 * User information must be secure.
 * User authorisation must be secure.
 
